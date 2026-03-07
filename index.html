@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axiom Net Zero | Restoring Our Shared Balance</title>
-    <!-- Syne for industrial strength, Cormorant Garamond for the soul -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -40,16 +39,16 @@
         .gold  { color: var(--gold); }
         .ash   { color: var(--ash); }
 
-        /* --- Nav --- */
+        /* --- Nav: Crowd Fix --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
             border-bottom: 1px solid var(--rule);
-            background: rgba(8,8,9,0.98);
-            backdrop-filter: blur(24px);
+            background: rgba(8,8,9,0.95);
+            backdrop-filter: blur(20px);
         }
         .nav-inner {
             max-width: 1400px; margin: 0 auto;
-            padding: 0 24px; height: 85px;
+            padding: 0 24px; height: 70px;
             display: flex; justify-content: space-between; align-items: center;
         }
         @media (min-width: 768px) { .nav-inner { padding: 0 48px; } }
@@ -57,53 +56,52 @@
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
             text-decoration: none;
+            flex-shrink: 0;
         }
 
         .logo-icon {
-            width: 28px;
+            width: 18px; /* Reduced significantly */
             height: auto;
-            opacity: 0.8;
+            opacity: 0.6;
         }
 
         .wordmark {
             font-family: 'Syne', sans-serif;
-            font-weight: 800; font-size: 14px;
-            letter-spacing: -0.01em; text-transform: uppercase; color: #fff;
+            font-weight: 700; font-size: 11px;
+            letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
         }
-        .wordmark span { color: var(--coral); }
+        .wordmark span { color: var(--coral); margin-left: 4px; }
         
-        .nav-links { display: none; gap: 40px; }
+        .nav-links { display: none; gap: 32px; margin-left: 60px; margin-right: auto; }
         @media (min-width: 1024px) { .nav-links { display: flex; } }
         
         .nav-links a {
-            font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
+            font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;
             color: var(--ash); text-decoration: none; transition: color 0.25s;
         }
         .nav-links a:hover { color: #fff; }
         
-        /* --- Nav CTA Block --- */
         .nav-cta-wrap {
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            gap: 2px;
+            line-height: 1.2;
+            flex-shrink: 0;
         }
         .nav-cta {
-            font-size: 11px;
-            letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
+            font-size: 10px;
+            letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
             color: var(--gold); text-decoration: none;
-            border-bottom: 1px solid rgba(197,160,89,0.35); padding-bottom: 2px;
             cursor: default;
         }
         .nav-cta-sub {
-            font-size: 9px;
+            font-size: 8px;
             color: var(--ash);
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
-            letter-spacing: 0.05em;
-            opacity: 0.7;
+            opacity: 0.6;
         }
 
         /* --- Hero --- */
@@ -121,10 +119,10 @@
             font-weight: 300;
             font-size: clamp(52px, 12vw, 150px);
             letter-spacing: -0.025em;
-            line-height: 1.4; 
+            line-height: 1.2; 
             color: #fff;
             margin-bottom: 48px;
-            padding-bottom: 10px;
+            padding-bottom: 20px;
         }
         .hero h1 em { color: var(--coral); font-style: italic; }
         
@@ -172,7 +170,7 @@
         .about-left h3 {
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
             font-size: clamp(38px, 5vw, 68px);
-            letter-spacing: -0.02em; line-height: 1.4; color: #fff; margin: 32px 0;
+            letter-spacing: -0.02em; line-height: 1.25; color: #fff; margin: 32px 0;
             padding-bottom: 10px;
         }
         .about-left p { font-size: 15px; color: var(--ash); line-height: 1.8; margin-bottom: 24px; }
@@ -181,9 +179,9 @@
         .stat-cell { background: var(--ink); padding: 40px 32px; }
         .stat-num {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(44px, 5vw, 64px); font-weight: 300; line-height: 1.4;
+            font-size: clamp(44px, 5vw, 64px); font-weight: 300; line-height: 1.2;
             letter-spacing: -0.02em; color: var(--gold); margin-bottom: 8px;
-            padding-bottom: 5px;
+            padding-bottom: 8px;
         }
         .stat-num.c { color: var(--coral); }
         .stat-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ash); }
@@ -201,12 +199,12 @@
             display: block;
             text-align: center;
             margin-bottom: 40px;
-            font-size: clamp(32px, 6vw, 64px); 
+            font-size: clamp(32px, 5vw, 54px); 
             letter-spacing: 0.2em;
             font-weight: 800;
             text-transform: uppercase;
             padding-bottom: 20px; 
-            line-height: 1.4;
+            line-height: 1.25;
         }
 
         .charter-header { text-align: center; margin-bottom: 80px; }
@@ -214,8 +212,8 @@
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
             font-size: clamp(44px, 6vw, 84px);
             letter-spacing: -0.025em; color: #fff; margin: 24px 0;
-            line-height: 1.4;
-            padding-bottom: 15px;
+            line-height: 1.25;
+            padding-bottom: 20px;
         }
         .charter-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 20px; }
         
@@ -227,11 +225,11 @@
             border-top: 1px solid var(--coral);
         }
         .charter-item h4 {
-            font-size: 24px; 
+            font-size: 20px; 
             letter-spacing: 0.1em; text-transform: uppercase;
             color: var(--gold); margin-bottom: 20px;
-            padding-bottom: 10px;
-            line-height: 1.3;
+            padding-bottom: 12px;
+            line-height: 1.2;
         }
         .charter-item p { font-size: 14px; color: var(--ash); line-height: 1.8; }
 
@@ -247,13 +245,15 @@
         .deploy-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); margin-top: 64px; }
         @media (min-width: 1024px) { .deploy-grid { grid-template-columns: repeat(3, 1fr); } }
         .deploy-cell { background: var(--matte); padding: 40px 36px; }
+        
+        /* --- Work Heading Fix (Screenshot 3) --- */
         .deploy-cell h4 { 
-            font-size: clamp(14px, 1.5vw, 18px); 
+            font-size: 13px; /* Reduced scale */
             font-family: 'Syne', sans-serif;
             font-weight: 800;
-            letter-spacing: 0.1em; 
+            letter-spacing: 0.15em; 
             text-transform: uppercase; 
-            color: #fff; 
+            color: var(--coral); /* Light Blue Brand Color */
             margin-bottom: 16px; 
             border-bottom: 1px solid var(--rule); 
             padding-bottom: 20px; 
@@ -267,19 +267,19 @@
         /* --- Presence & Reach Out Section --- */
         .presence-wrap {
             text-align: center;
-            padding: 120px 24px;
+            padding: 100px 24px;
         }
         .btn-reach-out {
             display: inline-block;
             background: var(--gold);
             color: var(--ink);
-            font-size: 14px;
-            letter-spacing: 0.3em;
+            font-size: 12px;
+            letter-spacing: 0.25em;
             text-transform: uppercase;
             font-weight: 800;
-            padding: 24px 56px;
+            padding: 20px 48px;
             text-decoration: none;
-            transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.3s;
+            transition: transform 0.3s ease, filter 0.3s;
             cursor: default;
         }
         .btn-reach-out:hover {
@@ -287,13 +287,13 @@
             filter: brightness(1.1);
         }
         .launch-subtext {
-            margin-top: 32px;
-            font-size: 13px;
+            margin-top: 24px;
+            font-size: 12px;
             color: var(--ash);
             font-family: 'Cormorant Garamond', serif;
             font-style: italic;
             letter-spacing: 0.05em;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
         /* --- Watermark --- */
@@ -312,8 +312,8 @@
         footer { border-top: 1px solid var(--rule); padding: 120px 48px; text-align: center; }
         .footer-wordmark {
             font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
-            font-size: clamp(60px, 9vw, 130px);
-            letter-spacing: -0.03em; color: #fff; margin-bottom: 64px; line-height: 1.4;
+            font-size: clamp(40px, 6vw, 80px);
+            letter-spacing: -0.03em; color: #fff; margin-bottom: 64px; line-height: 1.2;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -323,7 +323,7 @@
         .footer-wordmark span { color: var(--gold); }
         .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
         .footer-links a {
-            font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+            font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase;
             color: var(--ash); text-decoration: none; transition: color 0.25s;
         }
         .footer-links a:hover { color: var(--coral); }
@@ -345,7 +345,6 @@
     <nav>
         <div class="nav-inner">
             <a href="#" class="logo-wrap">
-                <!-- Soft sell SVG Logo -->
                 <svg class="logo-icon" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="4" stroke-linecap="round"/>
                     <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
@@ -358,7 +357,7 @@
                 <a href="#vision">Mission</a>
                 <a href="#deploy">Work</a>
                 <a href="#directors">Leadership</a>
-                <a href="#reach-out">Presence</a>
+                <a href="#whitepaper">Whitepaper</a>
             </div>
             <div class="nav-cta-wrap">
                 <a href="javascript:void(0)" class="nav-cta">Initiate</a>
@@ -392,9 +391,9 @@
         <div class="section reveal" id="about">
             <div class="two-col">
                 <div class="about-left">
-                    <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px;">OUR BASELINE</h2>
+                    <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px; font-size: 24px;">OUR BASELINE</h2>
                     <h3>Restoring what remains.</h3>
-                    <p>We believe the world already possesses the energy and assets required to sustain every community. The difficulty is simply the "plumbing" — the wasteful layers that keep resources from reaching the people who need them.</p>
+                    <p>We believe the world already possesses the energy and assets required to sustain every community. The difficulty is simply the plumbing — the wasteful layers that keep resources from reaching the people who need them.</p>
                     <p>Axiom Net Zero is an autonomous network of driven stakeholders. We don't ask for permission to save our communities; we simply fix the connections between nature and our neighborhoods.</p>
                 </div>
                 <div>
@@ -416,17 +415,15 @@
         </div>
     </div>
 
-    <!-- Mission Section -->
+    <!-- Mission -->
     <div class="full-bleed section-divider">
         <div class="section reveal" id="vision">
-            <!-- Subtle Watermark -->
             <svg class="watermark" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="2"/>
                 <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
             </svg>
-            
             <div class="charter-header">
-                <h2 class="prominent-heading gold">OUR MISSION</h2>
+                <h2 class="prominent-heading gold" style="font-size: 24px;">OUR MISSION</h2>
                 <h2>Our Why.</h2>
                 <div class="charter-rule"></div>
             </div>
@@ -438,11 +435,11 @@
         </div>
     </div>
 
-    <!-- Charter / Governance -->
+    <!-- Charter -->
     <div class="section-divider">
         <div class="section reveal" id="charter">
             <div class="charter-header">
-                <h2 class="prominent-heading gold">GOVERNANCE</h2>
+                <h2 class="prominent-heading gold" style="font-size: 24px;">GOVERNANCE</h2>
                 <h2>The Charter.</h2>
                 <div class="charter-rule"></div>
                 <span class="eyebrow ash">The Governing Principles of Axiom Net Zero</span>
@@ -473,7 +470,7 @@
         <div class="section reveal" id="mandate">
             <div class="mandate-inner">
                 <div class="mandate-line"></div>
-                <h2 class="prominent-heading gold">A PLAIN TRUTH</h2>
+                <h2 class="prominent-heading gold" style="font-size: 24px;">A PLAIN TRUTH</h2>
                 <p class="mandate-quote">
                     "We all know the feeling of a world out of sync. But the truth is simple: our communities were meant to work for us, not against us. I believe every family deserves clean air and a neighborhood powered by the sun. Axiom Net Zero is the promise to fix the plumbing — to make sure the resources we already have actually reach your front door."
                 </p>
@@ -483,11 +480,11 @@
     </div>
 
     <!-- Work -->
-    <div class="section-divider">
-        <div class="section reveal" id="deploy">
+    <div class="section-divider" id="deploy">
+        <div class="section reveal">
             <div class="deploy-header">
-                <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px;">OUR WORK</h2>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 48px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 15px;">Community Engagement.</h3>
+                <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px; font-size: 32px;">OUR WORK</h2>
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 42px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 15px;">Community Engagement.</h3>
                 <div style="margin-top: 48px; padding-top: 16px;">
                     <p class="ash">We believe that restoration is a social act. We deploy resources through community-based events designed to promote genuine health and happiness.</p>
                 </div>
@@ -503,18 +500,18 @@
                 </div>
                 <div class="deploy-cell">
                     <h4>Wellness Immersions</h4>
-                    <p class="ash">Solterrix where voluntary work resource assets are pledged to neighborhood restoration, creating a visible record of communal happiness and shared resolve.</p>
+                    <p class="ash">Solterrix where voluntary work resource assets are pledged to neighborhood restoration, creating a visible record of communal happiness.</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- The Outcome -->
+    <!-- Outcome -->
     <div class="full-bleed section-divider">
         <div class="section reveal" style="text-align: center;">
             <div class="mandate-line"></div>
-            <h2 class="prominent-heading gold">THE OUTCOME</h2>
-            <h2 class="about-left" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 54px); margin-bottom: 32px; text-align: center; padding-bottom: 20px; line-height: 1.4;">The Restoration of the Baseline.</h2>
+            <h2 class="prominent-heading gold" style="font-size: 24px;">THE OUTCOME</h2>
+            <h2 class="about-left" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 32px; text-align: center; padding-bottom: 15px; line-height: 1.3;">The Restoration of the Baseline.</h2>
             <div class="mandate-inner" style="max-width: 700px;">
                 <p class="ash" style="font-size: 17px; line-height: 1.8;">
                     The greatest thing we offer the world is entirely free: the return of Equilibrium. When the friction of consumption is removed and the connections of our communities are fixed, the result is an immeasurable, unshakeable peace. We give every soul the right to a steady world—communities that work for us, a sky that is clear, and a future that is finally, simply, balanced.
@@ -523,23 +520,36 @@
         </div>
     </div>
 
-    <!-- Leadership / Board Section -->
+    <!-- Leadership -->
     <div class="section-divider" id="directors">
         <div class="section reveal" style="text-align: center;">
-            <h2 class="coral" style="display: block; text-align: center; margin-bottom: 40px; font-size: clamp(24px, 4vw, 40px); letter-spacing: 0.2em; font-weight: 800; text-transform: uppercase; line-height: 1.4; padding-bottom: 15px;">CARETAKERS OF PROGRESS</h2>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 48px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 20px;">
+            <h2 class="coral" style="display: block; text-align: center; margin-bottom: 40px; font-size: 20px; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase;">Caretakers of Progress</h2>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 42px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 15px;">
                 Join the <strong>DEI-compliant</strong> Board of Directors that <strong>will</strong> make a difference.
             </h2>
             <div class="mandate-inner" style="max-width: 800px;">
-                <p class="ash" style="font-size: 17px; line-height: 1.8; margin-bottom: 40px;">
-                    We are building a governing body that reflects the communities we serve. We seek leaders who possess the soft lovingness to care for our neighbors, the conviction to uphold our mandate, and the resolve to ensure that absolute equity is the baseline of our every decision. Your voice is required to restore the balance.
+                <p class="ash" style="font-size: 17px; line-height: 1.8;">
+                    We are building a governing body that reflects the communities we serve. We seek leaders who possess the soft lovingness to care for our neighbors, the conviction to uphold our mandate, and the resolve to ensure that absolute equity is the baseline of our every decision.
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Reach Out Section -->
-    <div class="full-bleed section-divider" id="reach-out">
+    <!-- Whitepaper -->
+    <div class="full-bleed section-divider" id="whitepaper">
+        <div class="section reveal" style="text-align: center;">
+            <h2 class="gold" style="font-size: 16px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 800; margin-bottom: 24px;">Whitepaper</h2>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 3vw, 32px); font-style: italic; color: #fff; margin-bottom: 16px;">
+                Reach Out Directly via Instagram
+            </h2>
+            <p class="ash" style="font-size: 11px; font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.6;">
+                Check Back for Link Soon
+            </p>
+        </div>
+    </div>
+
+    <!-- Presence -->
+    <div class="section-divider" id="reach-out">
         <div class="section reveal presence-wrap">
             <span class="eyebrow coral" style="display: block; margin-bottom: 48px; font-weight: 800; letter-spacing: 0.4em;">Presence</span>
             <a href="javascript:void(0)" class="btn-reach-out">Reach Out</a>
@@ -550,7 +560,7 @@
     <footer>
         <div class="footer-inner">
             <div class="footer-wordmark">
-                <svg width="40" height="24" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg width="24" height="18" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="4" stroke-linecap="round"/>
                     <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
                 </svg>
@@ -561,11 +571,11 @@
                 <a href="#charter">Charter</a>
                 <a href="#vision">Mission</a>
                 <a href="#deploy">Work</a>
+                <a href="#whitepaper">Whitepaper</a>
                 <a href="#reach-out">Connect</a>
             </div>
             <div class="footer-base">
                 <span>Axiom Net Zero Limited &copy; 2026</span>
-                <span>Autonomous Resource Network</span>
                 <span>Restoring Our Shared Balance</span>
             </div>
         </div>
@@ -582,6 +592,5 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     </script>
-
 </body>
 </html>
