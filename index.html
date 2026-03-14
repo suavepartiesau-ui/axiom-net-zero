@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Axiom Net Zero | Restoring Our Shared Balance</title>
+    <!-- Syne for industrial strength, Cormorant Garamond for the soul -->
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -39,7 +40,7 @@
         .gold  { color: var(--gold); }
         .ash   { color: var(--ash); }
 
-        /* --- Nav: Crowd Fix --- */
+        /* --- Nav: 1.5x Logo Size & Breathing Room --- */
         nav {
             position: fixed; top: 0; width: 100%; z-index: 100;
             border-bottom: 1px solid var(--rule);
@@ -48,7 +49,7 @@
         }
         .nav-inner {
             max-width: 1400px; margin: 0 auto;
-            padding: 0 24px; height: 70px;
+            padding: 0 24px; height: 85px;
             display: flex; justify-content: space-between; align-items: center;
         }
         @media (min-width: 768px) { .nav-inner { padding: 0 48px; } }
@@ -56,23 +57,24 @@
         .logo-wrap {
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 18px;
             text-decoration: none;
             flex-shrink: 0;
         }
 
         .logo-icon {
-            width: 18px; /* Reduced significantly */
+            width: 27px;
             height: auto;
-            opacity: 0.6;
+            opacity: 0.7;
         }
 
         .wordmark {
             font-family: 'Syne', sans-serif;
-            font-weight: 700; font-size: 11px;
-            letter-spacing: 0.1em; text-transform: uppercase; color: #fff;
+            font-weight: 700; 
+            font-size: 16px; 
+            letter-spacing: 0.05em; text-transform: uppercase; color: #fff;
         }
-        .wordmark span { color: var(--coral); margin-left: 4px; }
+        .wordmark span { color: var(--coral); margin-left: 6px; }
         
         .nav-links { display: none; gap: 32px; margin-left: 60px; margin-right: auto; }
         @media (min-width: 1024px) { .nav-links { display: flex; } }
@@ -94,7 +96,7 @@
             font-size: 10px;
             letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
             color: var(--gold); text-decoration: none;
-            cursor: default;
+            cursor: pointer;
         }
         .nav-cta-sub {
             font-size: 8px;
@@ -119,10 +121,10 @@
             font-weight: 300;
             font-size: clamp(52px, 12vw, 150px);
             letter-spacing: -0.025em;
-            line-height: 1.2; 
+            line-height: 1.4; 
             color: #fff;
             margin-bottom: 48px;
-            padding-bottom: 20px;
+            padding-bottom: 10px;
         }
         .hero h1 em { color: var(--coral); font-style: italic; }
         
@@ -143,8 +145,7 @@
             padding: 18px 24px; text-decoration: none;
             transition: filter 0.3s, transform 0.3s;
         }
-        @media (min-width: 768px) { .btn-primary { flex: none; padding: 18px 40px; } }
-        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+        @media (min-width: 768px) { .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); } }
         
         .btn-ghost {
             flex: 1; text-align: center;
@@ -154,8 +155,7 @@
             padding: 18px 24px; text-decoration: none;
             transition: all 0.3s;
         }
-        @media (min-width: 768px) { .btn-ghost { flex: none; padding: 18px 40px; } }
-        .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
+        @media (min-width: 768px) { .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: #fff; } }
 
         /* --- Sections --- */
         .section { padding: 100px 24px; max-width: 1400px; margin: 0 auto; position: relative; }
@@ -170,7 +170,7 @@
         .about-left h3 {
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
             font-size: clamp(38px, 5vw, 68px);
-            letter-spacing: -0.02em; line-height: 1.25; color: #fff; margin: 32px 0;
+            letter-spacing: -0.02em; line-height: 1.4; color: #fff; margin: 32px 0;
             padding-bottom: 10px;
         }
         .about-left p { font-size: 15px; color: var(--ash); line-height: 1.8; margin-bottom: 24px; }
@@ -179,9 +179,9 @@
         .stat-cell { background: var(--ink); padding: 40px 32px; }
         .stat-num {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(44px, 5vw, 64px); font-weight: 300; line-height: 1.2;
+            font-size: clamp(44px, 5vw, 64px); font-weight: 300; line-height: 1.4;
             letter-spacing: -0.02em; color: var(--gold); margin-bottom: 8px;
-            padding-bottom: 8px;
+            padding-bottom: 5px;
         }
         .stat-num.c { color: var(--coral); }
         .stat-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ash); }
@@ -204,7 +204,7 @@
             font-weight: 800;
             text-transform: uppercase;
             padding-bottom: 20px; 
-            line-height: 1.25;
+            line-height: 1.4;
         }
 
         .charter-header { text-align: center; margin-bottom: 80px; }
@@ -212,8 +212,8 @@
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
             font-size: clamp(44px, 6vw, 84px);
             letter-spacing: -0.025em; color: #fff; margin: 24px 0;
-            line-height: 1.25;
-            padding-bottom: 20px;
+            line-height: 1.4;
+            padding-bottom: 15px;
         }
         .charter-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 20px; }
         
@@ -228,8 +228,8 @@
             font-size: 20px; 
             letter-spacing: 0.1em; text-transform: uppercase;
             color: var(--gold); margin-bottom: 20px;
-            padding-bottom: 12px;
-            line-height: 1.2;
+            padding-bottom: 10px;
+            line-height: 1.3;
         }
         .charter-item p { font-size: 14px; color: var(--ash); line-height: 1.8; }
 
@@ -242,52 +242,90 @@
         }
         .mandate-byline { margin-top: 48px; font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--ash); }
 
+        /* --- Grid Utilities --- */
+        .grid-4 { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); }
+        @media (min-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
+        @media (min-width: 1024px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
+
+        .pillar-cell { background: var(--matte); padding: 40px 32px; transition: background 0.3s; }
+        .pillar-cell h4 {
+            font-size: 14px; font-family: 'Syne', sans-serif; font-weight: 800;
+            letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral);
+            margin-bottom: 20px; border-bottom: 1px solid var(--rule); padding-bottom: 16px;
+        }
+        .pillar-cell p { font-size: 13px; line-height: 1.7; color: var(--ash); }
+
         .deploy-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); margin-top: 64px; }
         @media (min-width: 1024px) { .deploy-grid { grid-template-columns: repeat(3, 1fr); } }
         .deploy-cell { background: var(--matte); padding: 40px 36px; }
         
-        /* --- Work Heading Fix (Screenshot 3) --- */
         .deploy-cell h4 { 
-            font-size: 13px; /* Reduced scale */
+            font-size: 13px; 
             font-family: 'Syne', sans-serif;
             font-weight: 800;
             letter-spacing: 0.15em; 
             text-transform: uppercase; 
-            color: var(--coral); /* Light Blue Brand Color */
+            color: var(--coral); 
             margin-bottom: 16px; 
             border-bottom: 1px solid var(--rule); 
             padding-bottom: 20px; 
-            line-height: 1.4;
+            line-height: 1.45;
             min-height: 3.5em; 
             display: flex;
             align-items: center;
         }
         .deploy-cell p { font-size: 14px; color: var(--ash); line-height: 1.8; }
 
-        /* --- Presence & Reach Out Section --- */
+        /* --- Contact Portal --- */
         .presence-wrap {
             text-align: center;
             padding: 100px 24px;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .btn-reach-out {
+        .portal-select {
+            display: block;
+            width: 100%;
+            background: transparent;
+            border: 1px solid var(--rule);
+            color: #fff;
+            font-family: 'Syne', sans-serif;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 18px;
+            margin-bottom: 24px;
+            outline: none;
+            cursor: pointer;
+            appearance: none;
+            text-align-last: center;
+        }
+        .portal-select option {
+            background: var(--surface);
+            color: #fff;
+        }
+
+        .btn-initiate-active {
             display: inline-block;
             background: var(--gold);
             color: var(--ink);
-            font-size: 12px;
-            letter-spacing: 0.25em;
+            font-size: 13px;
+            letter-spacing: 0.3em;
             text-transform: uppercase;
             font-weight: 800;
-            padding: 20px 48px;
+            padding: 22px 64px;
             text-decoration: none;
             transition: transform 0.3s ease, filter 0.3s;
-            cursor: default;
+            cursor: pointer;
+            border: none;
+            width: 100%;
         }
-        .btn-reach-out:hover {
+        .btn-initiate-active:hover {
             transform: translateY(-2px);
             filter: brightness(1.1);
         }
         .launch-subtext {
-            margin-top: 24px;
+            margin-top: 32px;
             font-size: 12px;
             color: var(--ash);
             font-family: 'Cormorant Garamond', serif;
@@ -298,27 +336,17 @@
 
         /* --- Watermark --- */
         .watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 300px;
-            opacity: 0.02;
-            pointer-events: none;
-            z-index: 0;
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            width: 300px; opacity: 0.02; pointer-events: none; z-index: 0;
         }
 
         /* --- Footer --- */
-        footer { border-top: 1px solid var(--rule); padding: 120px 48px; text-align: center; }
+        footer { border-top: 1px solid var(--rule); padding: 100px 48px; text-align: center; }
         .footer-wordmark {
             font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
             font-size: clamp(40px, 6vw, 80px);
             letter-spacing: -0.03em; color: #fff; margin-bottom: 64px; line-height: 1.2;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-            padding-bottom: 20px;
+            display: flex; align-items: center; justify-content: center; gap: 20px; padding-bottom: 20px;
         }
         .footer-wordmark span { color: var(--gold); }
         .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
@@ -329,8 +357,7 @@
         .footer-links a:hover { color: var(--coral); }
         .footer-base {
             border-top: 1px solid var(--rule); padding-top: 32px;
-            display: flex; flex-direction: column; justify-content: space-between; align-items: center; gap: 16px;
-            opacity: 0.4;
+            display: flex; flex-direction: column; justify-content: space-between; align-items: center; gap: 16px; opacity: 0.4;
         }
         @media (min-width: 768px) { .footer-base { flex-direction: row; } }
         .footer-base span { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; }
@@ -354,14 +381,15 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#charter">Charter</a>
+                <a href="#pillars">Resolution</a>
                 <a href="#vision">Mission</a>
                 <a href="#deploy">Work</a>
                 <a href="#directors">Leadership</a>
                 <a href="#whitepaper">Whitepaper</a>
             </div>
             <div class="nav-cta-wrap">
-                <a href="javascript:void(0)" class="nav-cta">Initiate</a>
-                <span class="nav-cta-sub">Check back soon</span>
+                <a href="#reach-out" class="nav-cta">Initiate</a>
+                <span class="nav-cta-sub">Soft Launch In Progress</span>
             </div>
         </div>
     </nav>
@@ -415,7 +443,32 @@
         </div>
     </div>
 
-    <!-- Mission -->
+    <!-- Resolution Pillars Section -->
+    <div class="full-bleed section-divider" id="pillars">
+        <div class="section reveal">
+            <h2 class="prominent-heading gold" style="font-size: 24px;">THE RESOLUTION</h2>
+            <div class="grid-4">
+                <div class="pillar-cell">
+                    <h4>Food</h4>
+                    <p>A neighborhood-led aggregation of sustainable yield, ensuring that the nourishment our soil provides actually reaches the families who call it home.</p>
+                </div>
+                <div class="pillar-cell">
+                    <h4>Water</h4>
+                    <p>Direct restoration of the connections between natural sources and communal need, clearing away the friction of life's essential flow.</p>
+                </div>
+                <div class="pillar-cell">
+                    <h4>Energy</h4>
+                    <p>Reclaiming the power of the sun for community-owned independence, turning technically distant grids into a local, shared asset.</p>
+                </div>
+                <div class="pillar-cell">
+                    <h4>Healthcare</h4>
+                    <p>Healthcare for Humanity: establishing the unshakeable baseline of wellness and care as a firm promise to those who follow.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mission Section -->
     <div class="full-bleed section-divider">
         <div class="section reveal" id="vision">
             <svg class="watermark" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -435,7 +488,7 @@
         </div>
     </div>
 
-    <!-- Charter -->
+    <!-- Charter / Governance -->
     <div class="section-divider">
         <div class="section reveal" id="charter">
             <div class="charter-header">
@@ -506,12 +559,12 @@
         </div>
     </div>
 
-    <!-- Outcome -->
+    <!-- The Outcome -->
     <div class="full-bleed section-divider">
         <div class="section reveal" style="text-align: center;">
             <div class="mandate-line"></div>
-            <h2 class="prominent-heading gold" style="font-size: 24px;">THE OUTCOME</h2>
-            <h2 class="about-left" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 32px; text-align: center; padding-bottom: 15px; line-height: 1.3;">The Restoration of the Baseline.</h2>
+            <h2 class="prominent-heading gold">THE OUTCOME</h2>
+            <h2 class="about-left" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 32px; text-align: center; padding-bottom: 15px; line-height: 1.35;">The Restoration of the Baseline.</h2>
             <div class="mandate-inner" style="max-width: 700px;">
                 <p class="ash" style="font-size: 17px; line-height: 1.8;">
                     The greatest thing we offer the world is entirely free: the return of Equilibrium. When the friction of consumption is removed and the connections of our communities are fixed, the result is an immeasurable, unshakeable peace. We give every soul the right to a steady world—communities that work for us, a sky that is clear, and a future that is finally, simply, balanced.
@@ -520,7 +573,7 @@
         </div>
     </div>
 
-    <!-- Leadership -->
+    <!-- Leadership / Board -->
     <div class="section-divider" id="directors">
         <div class="section reveal" style="text-align: center;">
             <h2 class="coral" style="display: block; text-align: center; margin-bottom: 40px; font-size: 20px; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase;">Caretakers of Progress</h2>
@@ -537,9 +590,9 @@
 
     <!-- Whitepaper -->
     <div class="full-bleed section-divider" id="whitepaper">
-        <div class="section reveal" style="text-align: center;">
-            <h2 class="gold" style="font-size: 16px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 800; margin-bottom: 24px;">Whitepaper</h2>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 3vw, 32px); font-style: italic; color: #fff; margin-bottom: 16px;">
+        <div class="section reveal whitepaper-section">
+            <h2 class="whitepaper-title">Whitepaper</h2>
+            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 3vw, 32px); font-style: italic; color: #fff; margin-bottom: 16px; padding-bottom: 10px; line-height: 1.3;">
                 Reach Out Directly via Instagram
             </h2>
             <p class="ash" style="font-size: 11px; font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.6;">
@@ -548,11 +601,23 @@
         </div>
     </div>
 
-    <!-- Presence -->
+    <!-- Presence / Contact Portal -->
     <div class="section-divider" id="reach-out">
         <div class="section reveal presence-wrap">
             <span class="eyebrow coral" style="display: block; margin-bottom: 48px; font-weight: 800; letter-spacing: 0.4em;">Presence</span>
-            <a href="javascript:void(0)" class="btn-reach-out">Reach Out</a>
+            
+            <select id="departmentSelect" class="portal-select">
+                <option value="" disabled selected>Select Department</option>
+                <option value="health">Universal Healthcare</option>
+                <option value="food">Sustainable Food Yield</option>
+                <option value="water">Direct Water Restoration</option>
+                <option value="energy">Community Solar Energy</option>
+                <option value="directors">Board of Directors Inquiry</option>
+                <option value="general">General Inquiries</option>
+            </select>
+
+            <button onclick="handleInitiate()" class="btn-initiate-active">Initiate</button>
+            
             <p class="launch-subtext">Check Back Soon for our Launch Date</p>
         </div>
     </div>
@@ -569,6 +634,7 @@
             <div class="footer-links">
                 <a href="#about">About</a>
                 <a href="#charter">Charter</a>
+                <a href="#pillars">Resolution</a>
                 <a href="#vision">Mission</a>
                 <a href="#deploy">Work</a>
                 <a href="#whitepaper">Whitepaper</a>
@@ -591,6 +657,45 @@
             });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        function handleInitiate() {
+            const department = document.getElementById('departmentSelect').value;
+            let email = "";
+            let subject = "";
+
+            switch(department) {
+                case "health":
+                    email = "health@axiomnetzero.org";
+                    subject = "Inquiry: Universal Healthcare Pillar";
+                    break;
+                case "food":
+                    email = "food@axiomnetzero.org";
+                    subject = "Inquiry: Sustainable Food Yield Pillar";
+                    break;
+                case "water":
+                    email = "water@axiomnetzero.org";
+                    subject = "Inquiry: Direct Water Restoration Pillar";
+                    break;
+                case "energy":
+                    email = "energy@axiomnetzero.org";
+                    subject = "Inquiry: Community Solar Energy Pillar";
+                    break;
+                case "directors":
+                    email = "resolve@axiomnetzero.org";
+                    subject = "Inquiry: Board of Directors";
+                    break;
+                case "general":
+                    email = "resolve@axiomnetzero.org";
+                    subject = "General Inquiry";
+                    break;
+                default:
+                    email = "resolve@axiomnetzero.org";
+                    subject = "Initiate Communication";
+            }
+
+            const body = "I am reaching out to discuss the restoration of our shared balance.";
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        }
     </script>
 </body>
 </html>
