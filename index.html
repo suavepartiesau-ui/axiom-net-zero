@@ -40,148 +40,105 @@
         .gold  { color: var(--gold); }
         .ash   { color: var(--ash); }
 
-        /* --- Nav: 1.5x Logo Size & Breathing Room --- */
         nav {
-            position: fixed; top: 0; width: 100%; z-index: 100;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
             border-bottom: 1px solid var(--rule);
-            background: rgba(8,8,9,0.95);
-            backdrop-filter: blur(20px);
+            background: rgba(8,8,9,0.9);
+            backdrop-filter: blur(24px);
         }
         .nav-inner {
             max-width: 1400px; margin: 0 auto;
-            padding: 0 24px; height: 85px;
+            padding: 0 48px; height: 72px;
             display: flex; justify-content: space-between; align-items: center;
         }
-        @media (min-width: 768px) { .nav-inner { padding: 0 48px; } }
-        
-        .logo-wrap {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo-icon {
-            width: 27px;
-            height: auto;
-            opacity: 0.7;
-        }
-
         .wordmark {
             font-family: 'Syne', sans-serif;
-            font-weight: 700; 
-            font-size: 16px; 
-            letter-spacing: 0.05em; text-transform: uppercase; color: #fff;
+            font-weight: 800; font-size: 16px;
+            letter-spacing: -0.02em; text-transform: uppercase; color: #fff;
+            text-decoration: none; cursor: pointer;
         }
-        .wordmark span { color: var(--coral); margin-left: 6px; }
-        
-        .nav-links { display: none; gap: 32px; margin-left: 60px; margin-right: auto; }
-        @media (min-width: 1024px) { .nav-links { display: flex; } }
-        
+        .wordmark span { color: var(--coral); }
+        .nav-links { display: flex; gap: 40px; }
         .nav-links a {
-            font-size: 8px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 600;
-            color: var(--ash); text-decoration: none; transition: color 0.25s;
+            font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
+            color: var(--ash); text-decoration: none; transition: color 0.25s; cursor: pointer;
         }
         .nav-links a:hover { color: #fff; }
-        
-        .nav-cta-wrap {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            line-height: 1.2;
-            flex-shrink: 0;
-        }
         .nav-cta {
-            font-size: 10px;
-            letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+            font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 700;
             color: var(--gold); text-decoration: none;
-            cursor: pointer;
-        }
-        .nav-cta-sub {
-            font-size: 8px;
-            color: var(--ash);
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            opacity: 0.6;
+            border-bottom: 1px solid rgba(197,160,89,0.35); padding-bottom: 2px; cursor: pointer;
         }
 
-        /* --- Hero --- */
+        /* --- View Switcher Utilities --- */
+        .view-content { display: none; }
+        .view-content.active { display: block; }
+
         .hero-wrap { max-width: 1400px; margin: 0 auto; position: relative; }
         .hero {
             min-height: 100svh;
-            display: flex; flex-direction: column; 
-            justify-content: center; 
-            padding: 120px 24px 80px; 
+            display: flex; flex-direction: column; justify-content: flex-end;
+            padding: 0 48px 96px;
         }
-        @media (min-width: 768px) { .hero { padding: 140px 48px 100px; } }
-        
+        .hero-tag {
+            position: absolute; top: 140px; right: 48px;
+            writing-mode: vertical-rl;
+            font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase;
+            color: var(--ash); font-weight: 700; opacity: 0.5;
+        }
         .hero h1 {
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
-            font-size: clamp(52px, 12vw, 150px);
+            font-size: clamp(60px, 11vw, 150px);
             letter-spacing: -0.025em;
-            line-height: 1.4; 
+            line-height: 0.85;
             color: #fff;
             margin-bottom: 48px;
-            padding-bottom: 10px;
         }
         .hero h1 em { color: var(--coral); font-style: italic; }
-        
         .hero-sub {
-            display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; gap: 40px;
+            display: flex; justify-content: space-between; align-items: flex-end; gap: 48px;
         }
-        @media (min-width: 768px) { .hero-sub { flex-direction: row; align-items: flex-end; gap: 48px; } }
-        
         .hero-desc { max-width: 520px; font-size: 15px; line-height: 1.7; color: var(--ash); }
-        .hero-actions { display: flex; gap: 12px; flex-shrink: 0; width: 100%; }
-        @media (min-width: 768px) { .hero-actions { width: auto; gap: 16px; } }
-
+        .hero-actions { display: flex; gap: 16px; flex-shrink: 0; }
         .btn-primary {
-            flex: 1; text-align: center;
             display: inline-block;
             background: var(--gold); color: var(--ink);
             font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700;
-            padding: 18px 24px; text-decoration: none;
+            padding: 18px 40px; text-decoration: none;
             transition: filter 0.3s, transform 0.3s;
+            cursor: pointer;
+            border: none;
         }
-        @media (min-width: 768px) { .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); } }
-        
+        .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
         .btn-ghost {
-            flex: 1; text-align: center;
             display: inline-block;
             border: 1px solid var(--rule); color: var(--ash);
             font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700;
-            padding: 18px 24px; text-decoration: none;
+            padding: 18px 40px; text-decoration: none;
             transition: all 0.3s;
+            cursor: pointer;
+            background: transparent;
         }
-        @media (min-width: 768px) { .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: #fff; } }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.2); color: #fff; }
 
-        /* --- Sections --- */
-        .section { padding: 100px 24px; max-width: 1400px; margin: 0 auto; position: relative; }
-        @media (min-width: 768px) { .section { padding: 120px 48px; } }
-        
+        .section { padding: 120px 48px; max-width: 1400px; margin: 0 auto; }
         .full-bleed { background: var(--surface); }
         .section-divider { border-top: 1px solid var(--rule); }
 
-        .two-col { display: grid; grid-template-columns: 1fr; gap: 64px; align-items: start; }
-        @media (min-width: 1024px) { .two-col { grid-template-columns: 1fr 1fr; gap: 100px; } }
-
+        .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
         .about-left h3 {
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
-            font-size: clamp(38px, 5vw, 68px);
-            letter-spacing: -0.02em; line-height: 1.4; color: #fff; margin: 32px 0;
-            padding-bottom: 10px;
+            font-size: clamp(40px, 5vw, 68px);
+            letter-spacing: -0.02em; line-height: 1; color: #fff; margin: 32px 0;
         }
         .about-left p { font-size: 15px; color: var(--ash); line-height: 1.8; margin-bottom: 24px; }
-        
         .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); }
         .stat-cell { background: var(--ink); padding: 40px 32px; }
         .stat-num {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(44px, 5vw, 64px); font-weight: 300; line-height: 1.4;
+            font-size: 56px; font-weight: 300; line-height: 1;
             letter-spacing: -0.02em; color: var(--gold); margin-bottom: 8px;
-            padding-bottom: 5px;
         }
         .stat-num.c { color: var(--coral); }
         .stat-label { font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ash); }
@@ -194,460 +151,493 @@
             font-size: 17px; color: #fff; line-height: 1.6;
         }
 
-        /* --- Prominent Headings --- */
-        .prominent-heading {
-            display: block;
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: clamp(32px, 5vw, 54px); 
-            letter-spacing: 0.2em;
-            font-weight: 800;
-            text-transform: uppercase;
-            padding-bottom: 20px; 
-            line-height: 1.4;
-        }
-
         .charter-header { text-align: center; margin-bottom: 80px; }
         .charter-header h2 {
             font-family: 'Cormorant Garamond', serif; font-weight: 300;
-            font-size: clamp(44px, 6vw, 84px);
+            font-size: clamp(48px, 6vw, 88px);
             letter-spacing: -0.025em; color: #fff; margin: 24px 0;
-            line-height: 1.4;
-            padding-bottom: 15px;
         }
         .charter-rule { width: 60px; height: 1px; background: var(--gold); margin: 0 auto 20px; }
-        
-        .charter-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); }
-        @media (min-width: 768px) { .charter-grid { grid-template-columns: 1fr 1fr; } }
-        
+        .charter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); }
         .charter-item {
             background: var(--matte); padding: 48px 40px;
             border-top: 1px solid var(--coral);
         }
         .charter-item h4 {
-            font-size: 20px; 
-            letter-spacing: 0.1em; text-transform: uppercase;
+            font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase;
             color: var(--gold); margin-bottom: 20px;
-            padding-bottom: 10px;
-            line-height: 1.3;
         }
         .charter-item p { font-size: 14px; color: var(--ash); line-height: 1.8; }
+
+        .vision-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; }
+        .vision-col h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px; font-weight: 300; font-style: italic;
+            letter-spacing: -0.01em; color: #fff; margin: 20px 0; line-height: 1;
+        }
+        .vision-col p { font-size: 14px; color: var(--ash); line-height: 1.85; }
+
+        /* --- Hover/Click Popup Window --- */
+        .popup-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin: 80px auto 0;
+            width: fit-content;
+        }
+        .popup-window {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(15px);
+            width: 90vw;
+            max-width: 900px;
+            background: rgba(14, 14, 16, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--coral);
+            padding: 48px;
+            z-index: 500;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+            text-align: left;
+            pointer-events: none;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+            margin-top: 16px;
+        }
+        .popup-window::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            width: 16px;
+            height: 16px;
+            background: rgba(14, 14, 16, 0.98);
+            border-top: 1px solid var(--coral);
+            border-left: 1px solid var(--coral);
+        }
+        .popup-container:hover .popup-window,
+        .popup-container.active .popup-window {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+        .popup-section { margin-bottom: 32px; }
+        .popup-section:last-child { margin-bottom: 0; }
+        .popup-section h4 {
+            color: var(--gold);
+            font-family: 'Syne', sans-serif;
+            font-size: 13px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .popup-section p {
+            color: var(--ash);
+            font-size: 15px;
+            line-height: 1.8;
+        }
 
         .mandate-inner { max-width: 800px; margin: 0 auto; text-align: center; }
         .mandate-line { width: 1px; height: 60px; background: rgba(197,160,89,0.3); margin: 0 auto 48px; }
         .mandate-quote {
             font-family: 'Cormorant Garamond', serif;
-            font-size: clamp(20px, 2.8vw, 34px);
+            font-size: clamp(22px, 2.8vw, 34px);
             font-weight: 300; font-style: italic; line-height: 1.5; color: #fff;
         }
         .mandate-byline { margin-top: 48px; font-size: 9px; letter-spacing: 0.5em; text-transform: uppercase; color: var(--ash); }
 
-        /* --- Grid Utilities --- */
-        .grid-4 { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); }
-        @media (min-width: 768px) { .grid-4 { grid-template-columns: repeat(2, 1fr); } }
-        @media (min-width: 1024px) { .grid-4 { grid-template-columns: repeat(4, 1fr); } }
-
-        .pillar-cell { background: var(--matte); padding: 40px 32px; transition: background 0.3s; }
-        .pillar-cell h4 {
-            font-size: 14px; font-family: 'Syne', sans-serif; font-weight: 800;
-            letter-spacing: 0.2em; text-transform: uppercase; color: var(--coral);
-            margin-bottom: 20px; border-bottom: 1px solid var(--rule); padding-bottom: 16px;
+        .deploy-header { margin-bottom: 64px; }
+        .deploy-header h2 {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300;
+            font-size: clamp(44px, 5.5vw, 80px);
+            letter-spacing: -0.025em; color: #fff; line-height: 0.95;
+            margin: 24px 0 32px;
         }
-        .pillar-cell p { font-size: 13px; line-height: 1.7; color: var(--ash); }
-
-        .deploy-grid { display: grid; grid-template-columns: 1fr; gap: 1px; background: var(--rule); margin-top: 64px; }
-        @media (min-width: 1024px) { .deploy-grid { grid-template-columns: repeat(3, 1fr); } }
-        .deploy-cell { background: var(--matte); padding: 40px 36px; }
+        .deploy-header h2 em { color: var(--coral); font-style: italic; }
+        .deploy-header p { font-size: 15px; color: var(--ash); line-height: 1.8; max-width: 580px; }
         
-        .deploy-cell h4 { 
-            font-size: 13px; 
-            font-family: 'Syne', sans-serif;
-            font-weight: 800;
-            letter-spacing: 0.15em; 
-            text-transform: uppercase; 
-            color: var(--coral); 
-            margin-bottom: 16px; 
-            border-bottom: 1px solid var(--rule); 
-            padding-bottom: 20px; 
-            line-height: 1.45;
-            min-height: 3.5em; 
-            display: flex;
-            align-items: center;
+        .deploy-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--rule); margin-top: 64px; }
+        .deploy-cell { background: var(--matte); padding: 40px 36px; }
+        .deploy-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 13px; font-weight: 300; color: var(--ash);
+            letter-spacing: 0.1em; display: block; margin-bottom: 20px;
+            border-bottom: 1px solid var(--rule); padding-bottom: 20px;
         }
+        .deploy-cell h4 { font-size: 9px; letter-spacing: 0.35em; text-transform: uppercase; color: #fff; margin-bottom: 16px; }
         .deploy-cell p { font-size: 14px; color: var(--ash); line-height: 1.8; }
 
-        /* --- Contact Portal --- */
-        .presence-wrap {
-            text-align: center;
-            padding: 100px 24px;
-            max-width: 600px;
-            margin: 0 auto;
+        .contact-header { text-align: center; margin-bottom: 64px; }
+        .contact-header h2 {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300;
+            font-size: clamp(40px, 5vw, 72px);
+            letter-spacing: -0.02em; color: #fff; margin-top: 16px;
         }
+
+        /* --- Cloudflare Routing Portal --- */
         .portal-select {
-            display: block;
-            width: 100%;
-            background: transparent;
-            border: 1px solid var(--rule);
-            color: #fff;
-            font-family: 'Syne', sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            padding: 18px;
-            margin-bottom: 24px;
-            outline: none;
-            cursor: pointer;
+            display: block; width: 100%; max-width: 500px; margin: 0 auto 32px;
+            background: transparent; border: 1px solid var(--rule);
+            color: #fff; font-family: 'Syne', sans-serif; font-size: 11px;
+            text-transform: uppercase; letter-spacing: 0.2em; padding: 20px;
+            outline: none; cursor: pointer; text-align-last: center;
             appearance: none;
-            text-align-last: center;
         }
-        .portal-select option {
-            background: var(--surface);
-            color: #fff;
-        }
-
+        .portal-select option { background: var(--surface); color: #fff; }
         .btn-initiate-active {
-            display: inline-block;
-            background: var(--gold);
-            color: var(--ink);
-            font-size: 13px;
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            font-weight: 800;
-            padding: 22px 64px;
-            text-decoration: none;
-            transition: transform 0.3s ease, filter 0.3s;
-            cursor: pointer;
-            border: none;
-            width: 100%;
+            display: inline-block; background: var(--gold); color: var(--ink);
+            font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 800;
+            padding: 24px 80px; text-decoration: none; transition: all 0.3s;
+            cursor: pointer; border: none; width: auto;
         }
-        .btn-initiate-active:hover {
-            transform: translateY(-2px);
-            filter: brightness(1.1);
-        }
-        .launch-subtext {
-            margin-top: 32px;
-            font-size: 12px;
-            color: var(--ash);
-            font-family: 'Cormorant Garamond', serif;
-            font-style: italic;
-            letter-spacing: 0.05em;
-            opacity: 0.7;
-        }
+        .btn-initiate-active:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
-        /* --- Watermark --- */
-        .watermark {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 300px; opacity: 0.02; pointer-events: none; z-index: 0;
-        }
-
-        /* --- Footer --- */
-        footer { border-top: 1px solid var(--rule); padding: 100px 48px; text-align: center; }
+        footer { border-top: 1px solid var(--rule); padding: 120px 48px; text-align: center; }
         .footer-wordmark {
             font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic;
-            font-size: clamp(40px, 6vw, 80px);
-            letter-spacing: -0.03em; color: #fff; margin-bottom: 64px; line-height: 1.2;
-            display: flex; align-items: center; justify-content: center; gap: 20px; padding-bottom: 20px;
+            font-size: clamp(60px, 9vw, 130px);
+            letter-spacing: -0.03em; color: #fff; margin-bottom: 64px; line-height: 0.85;
         }
         .footer-wordmark span { color: var(--gold); }
         .footer-links { display: flex; justify-content: center; gap: 40px; margin-bottom: 64px; flex-wrap: wrap; }
         .footer-links a {
-            font-size: 8px; letter-spacing: 0.3em; text-transform: uppercase;
-            color: var(--ash); text-decoration: none; transition: color 0.25s;
+            font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+            color: var(--ash); text-decoration: none; transition: color 0.25s; cursor: pointer;
         }
         .footer-links a:hover { color: var(--coral); }
         .footer-base {
             border-top: 1px solid var(--rule); padding-top: 32px;
-            display: flex; flex-direction: column; justify-content: space-between; align-items: center; gap: 16px; opacity: 0.4;
+            display: flex; justify-content: space-between; align-items: center;
+            opacity: 0.4;
         }
-        @media (min-width: 768px) { .footer-base { flex-direction: row; } }
         .footer-base span { font-size: 9px; letter-spacing: 0.4em; text-transform: uppercase; }
 
         .reveal { opacity: 0; transform: translateY(20px); transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1); }
         .reveal.visible { opacity: 1; transform: none; }
+
+        @media (max-width: 960px) {
+            .nav-links { display: none; }
+            .hero { padding: 0 24px 80px; }
+            .hero-tag { display: none; }
+            .hero-sub { flex-direction: column; align-items: flex-start; gap: 40px; }
+            .section { padding: 80px 24px; }
+            .two-col { grid-template-columns: 1fr; gap: 64px; }
+            .charter-grid, .deploy-grid { grid-template-columns: 1fr; }
+            .vision-row { grid-template-columns: 1fr; gap: 48px; }
+            footer { padding: 80px 24px; }
+            .footer-base { flex-direction: column; gap: 16px; text-align: center; }
+            .nav-inner { padding: 0 24px; }
+            .popup-window { width: calc(100vw - 48px); padding: 32px 24px; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Nav -->
+    <!-- Main Navigation -->
     <nav>
         <div class="nav-inner">
-            <a href="#" class="logo-wrap">
-                <svg class="logo-icon" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
-                </svg>
-                <div class="wordmark">Axiom<span>Net Zero</span></div>
-            </a>
+            <a onclick="showView('home')" class="wordmark">Axiom<span>NetZero</span></a>
             <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#charter">Charter</a>
-                <a href="#pillars">Resolution</a>
-                <a href="#vision">Mission</a>
-                <a href="#deploy">Work</a>
-                <a href="#directors">Leadership</a>
-                <a href="#whitepaper">Whitepaper</a>
+                <a onclick="showView('home', '#about')">About</a>
+                <a onclick="showView('home', '#charter')">Charter</a>
+                <a onclick="showView('home', '#vision')">Mission</a>
+                <a onclick="showView('sectors')">Sectors</a>
+                <a onclick="showView('home', '#contact')">Contact</a>
             </div>
-            <div class="nav-cta-wrap">
-                <a href="#reach-out" class="nav-cta">Initiate</a>
-                <span class="nav-cta-sub">Soft Launch In Progress</span>
-            </div>
+            <a onclick="showView('home', '#contact')" class="nav-cta">Initiate</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero-wrap">
-        <div class="hero">
-            <h1 class="reveal">
-                A World in<br>
-                <em>Balance.</em>
-            </h1>
-            <div class="hero-sub reveal">
-                <p class="hero-desc">
-                    Axiom Net Zero is an autonomous network of driven stakeholders aggregating community solar, biosphere data awareness, and voluntary work resource assets — then deploying them where they are needed most. 
-                    <span class="coral">Carbon neutral by inception.</span>
-                </p>
-                <div class="hero-actions">
-                    <a href="#deploy" class="btn-primary">View Ledger</a>
-                    <a href="#charter" class="btn-ghost">The Charter</a>
+    <!-- [HOME VIEW] -->
+    <div id="view-home" class="view-content active">
+        
+        <div class="hero-wrap">
+            <div class="hero">
+                <span class="hero-tag">Decentralised Not For Profit — Est. 2026</span>
+                <h1>
+                    A World in<br>
+                    <em>Balance.</em>
+                </h1>
+                <div class="hero-sub">
+                    <p class="hero-desc">
+                        Axiom Net Zero is a decentralised resource aggregator enabling community solar-farming, biosphere data awareness, and contribution of work hours to causes supporting baseline living. We love to work with autonomous self-driven individuals and organisations to deploy resources where they are needed most. 
+                        <span class="coral">Carbon neutral by inception, carbon friendly by intention.</span>
+                    </p>
+                    <div class="hero-actions">
+                        <a onclick="showView('home', '#deploy')" class="btn-primary">View Ledger</a>
+                        <a onclick="showView('home', '#charter')" class="btn-ghost">The Charter</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- About -->
-    <div class="section-divider">
-        <div class="section reveal" id="about">
-            <div class="two-col">
-                <div class="about-left">
-                    <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px; font-size: 24px;">OUR BASELINE</h2>
-                    <h3>Restoring what remains.</h3>
-                    <p>We believe the world already possesses the energy and assets required to sustain every community. The difficulty is simply the plumbing — the wasteful layers that keep resources from reaching the people who need them.</p>
-                    <p>Axiom Net Zero is an autonomous network of driven stakeholders. We don't ask for permission to save our communities; we simply fix the connections between nature and our neighborhoods.</p>
-                </div>
-                <div>
-                    <div class="stat-grid">
-                        <div class="stat-cell">
-                            <div class="stat-num">100%</div>
-                            <div class="stat-label">Direct Impact</div>
-                        </div>
-                        <div class="stat-cell">
-                            <div class="stat-num c">Zero</div>
-                            <div class="stat-label">Systemic Waste</div>
-                        </div>
-                        <div class="stat-quote">
-                            <p>"We don't build monuments to ourselves. We focus on the immeasurable promise of leaving things a bit better than we found them."</p>
+        <div class="section-divider">
+            <div class="section reveal" id="about">
+                <div class="two-col">
+                    <div class="about-left">
+                        <span class="eyebrow coral">OUR Baseline</span>
+                        <h3>Restoring the balance.</h3>
+                        <p>We believe the world already possesses the energy & resources required to sustain every community. The problem is the infrastructure (or 'the pipes and plumbing' that supports society). It is the complex & wasteful layers that keep those resources from reaching the people who need them.</p>
+                        <p>Axiom Net Zero is a decentralised collect of people and engaged community members. We do not ask or need permissions to save our homes from devastation. We simply fix the connections between what should be a natural state, and the artifial state of our neighbourhoods</p>
+                    </div>
+                    <div>
+                        <div class="stat-grid">
+                            <div class="stat-cell">
+                                <div class="stat-num">100%</div>
+                                <div class="stat-label">Direct Impact</div>
+                            </div>
+                            <div class="stat-cell">
+                                <div class="stat-num c">Zero</div>
+                                <div class="stat-label">Systemic Waste</div>
+                            </div>
+                            <div class="stat-quote">
+                                <p>"We do not build monuments to ourselves. We restore the steady ground beneath the feet of our neighbours."</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Resolution Pillars Section -->
-    <div class="full-bleed section-divider" id="pillars">
-        <div class="section reveal">
-            <h2 class="prominent-heading gold" style="font-size: 24px;">THE RESOLUTION</h2>
-            <div class="grid-4">
-                <div class="pillar-cell">
-                    <h4>Food</h4>
-                    <p>A neighborhood-led aggregation of sustainable yield, ensuring that the nourishment our soil provides actually reaches the families who call it home.</p>
+        <div class="full-bleed section-divider">
+            <div class="section reveal" id="charter">
+                <div class="charter-header">
+                    <span class="eyebrow gold">Governance</span>
+                    <h2>The Charter.</h2>
+                    <div class="charter-rule"></div>
+                    <span class="eyebrow ash">The Governing Principles of Axiom Net Zero</span>
                 </div>
-                <div class="pillar-cell">
-                    <h4>Water</h4>
-                    <p>Direct restoration of the connections between natural sources and communal need, clearing away the friction of life's essential flow.</p>
+                <div class="charter-grid">
+                    <div class="charter-item">
+                        <h4>Article 01 — Inception Balance</h4>
+                        <p>Axiom Net Zero is mandated to achieve absolute Carbon Neutrality within its first 365 days of operation. This is not a target we work toward. It is a structural condition of our existence.</p>
+                    </div>
+                    <div class="charter-item">
+                        <h4>Article 02 — Radical Transparency</h4>
+                        <p>Every resource aggregated, including solar yield, bio intelligence, and community time, is recorded on an immutable public ledger. Honest accounting is the only way to build trust.</p>
+                    </div>
+                    <div class="charter-item">
+                        <h4>Article 03 — Intergenerational Equity</h4>
+                        <p>No choice is made for short term gain. Every resource deployment is measured against its impact on the world our children will inherit fifty years from now.</p>
+                    </div>
+                    <div class="charter-item">
+                        <h4>Article 04 — Decentralised Flow</h4>
+                        <p>Resources move from point of origin to point of need with minimal friction. We remove the clutter between nature and families. We do not add to it.</p>
+                    </div>
                 </div>
-                <div class="pillar-cell">
-                    <h4>Energy</h4>
-                    <p>Reclaiming the power of the sun for community-owned independence, turning technically distant grids into a local, shared asset.</p>
+            </div>
+        </div>
+
+        <div class="section-divider">
+            <div class="section reveal" id="vision">
+                <div class="vision-row">
+                    <div class="vision-col">
+                        <span class="eyebrow coral">OUR Vision</span>
+                        <h3>A Steady World.</h3>
+                        <p class="ash">We envision a world where clean air and shared energy are not privileges determined by postcode. We see a future where environmental health is as steady as the sunrise.</p>
+                    </div>
+                    <div class="vision-col">
+                        <span class="eyebrow gold">OUR Strategy</span>
+                        <h3>Aggregation.</h3>
+                        <p class="ash">We link what already exists. The output of the sun, the health of our local land, and the time we spend taking care of it. Combined, these become a force for restoration.</p>
+                    </div>
+                    <div class="vision-col">
+                        <span class="eyebrow coral">OUR Mission</span>
+                        <h3>To Restore.</h3>
+                        <p class="ash">Our mission is to fix the leaks in our world. We ensure that every unit of community energy is protected, accounted for, and shared fairly with those who need it most.</p>
+                    </div>
                 </div>
-                <div class="pillar-cell">
-                    <h4>Healthcare</h4>
-                    <p>Healthcare for Humanity: establishing the unshakeable baseline of wellness and care as a firm promise to those who follow.</p>
+            </div>
+        </div>
+
+        <div class="full-bleed section-divider" id="mandate">
+            <div class="section reveal">
+                <div class="mandate-inner">
+                    <div class="mandate-line"></div>
+                    <span class="eyebrow gold" style="display:block;text-align:center;margin-bottom:40px;">A Plain Truth</span>
+                    <p class="mandate-quote">
+                        "We all know the feeling of a world out of sync. But the truth is simple. Our home was meant to work for us, not against us. I believe every family deserves clean air and a neighbourhood powered by the sun. Axiom Net Zero is our promise to fix the plumbing and to make sure the resources we already have actually reach your front door."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-divider" id="deploy">
+            <div class="section reveal">
+                <div class="deploy-header">
+                    <span class="eyebrow coral">OUR WORK</span>
+                    <h2>Resource<br><em>Aggregation.</em></h2>
+                    <p class="ash">We do not just talk about change. We measure it. Our platform tracks the flow of essential resources across our network of community nodes, ensuring absolute transparency.</p>
+                </div>
+                <div class="deploy-grid">
+                    <div class="deploy-cell">
+                        <span class="deploy-num">NODE 01</span>
+                        <h4>Community Solar</h4>
+                        <p class="ash">Aggregating excess solar yield from local residential clusters and distributing it to community infrastructure and low access households.</p>
+                    </div>
+                    <div class="deploy-cell">
+                        <span class="deploy-num">NODE 02</span>
+                        <h4>Bio Intelligence</h4>
+                        <p class="ash">Monitoring local biodiversity and air quality in real time. Using that data to direct community led restoration projects where they are needed most.</p>
+                    </div>
+                    <div class="deploy-cell">
+                        <span class="deploy-num">NODE 03</span>
+                        <h4>Collective Time</h4>
+                        <p class="ash">Aggregating the hours our community spends on restoration and protection. Human output is the most vital resource in our shared ledger.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="full-bleed section-divider" id="engagement">
+            <div class="section reveal">
+                <div class="deploy-header">
+                    <h2>Community<br><em>Engagement.</em></h2>
+                    <p class="ash" style="max-width:800px;">We believe that restoration is a social act. We deploy resources through community based events designed to promote genuine health and happiness.</p>
+                </div>
+                <div class="deploy-grid">
+                    <div class="deploy-cell">
+                        <span class="deploy-num">ENERGISE RECONNECT SOLTERRIX</span>
+                        <p class="ash">Meetups where neighbour-owned energy yield is shared and facilitated via devices, turning technical assets into a unified communal handshake.</p>
+                    </div>
+                    <div class="deploy-cell">
+                        <span class="deploy-num">COMMUNAL POWER TABLES</span>
+                        <p class="ash">A Solterra where communities share electricity over simple food and drink, using neighbourhood yields to fuel the shared kitchen and spark genuine human connection.</p>
+                    </div>
+                    <div class="deploy-cell">
+                        <span class="deploy-num">WELLNESS IMMERSIONS</span>
+                        <p class="ash">Solterrix where voluntary work resource assets are pledged to neighbourhood restoration, creating a visible record of shared purpose and lasting solidarity.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 80px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 2.8vw, 34px); font-weight: 300; font-style: italic; color: var(--gold); line-height: 1.5;">
+                        "Collective Effervescence is the intense, shared emotional energy and sense of unity that emerges when a group of people gather together with a shared focus."
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="section-divider" id="contact">
+            <div class="section reveal">
+                <div class="contact-header">
+                    <span class="eyebrow ash">Connect</span>
+                    <h2>Initiate.</h2>
+                </div>
+                <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+                    <select id="departmentSelect" class="portal-select">
+                        <option value="" disabled selected>Select Department</option>
+                        <option value="health">Universal Healthcare</option>
+                        <option value="food">Sustainable Food Yield</option>
+                        <option value="water">Direct Water Restoration</option>
+                        <option value="energy">Community Solar Energy</option>
+                        <option value="directors">Board of Directors Inquiry</option>
+                        <option value="general">General Inquiries</option>
+                    </select>
+
+                    <button onclick="handleInitiate()" class="btn-initiate-active">Initiate</button>
+                    <p style="margin-top: 32px; font-size: 12px; color: var(--ash); font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.7;">Check Back Soon for our Launch Date</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Mission Section -->
-    <div class="full-bleed section-divider">
-        <div class="section reveal" id="vision">
-            <svg class="watermark" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="2"/>
-                <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
-            </svg>
-            <div class="charter-header">
-                <h2 class="prominent-heading gold" style="font-size: 24px;">OUR MISSION</h2>
-                <h2>Our Why.</h2>
-                <div class="charter-rule"></div>
+    <!-- [SECTORS VIEW] -->
+    <div id="view-sectors" class="view-content">
+        <div class="section reveal" style="padding-top: 140px;">
+            <div class="charter-header" style="text-align: left; margin-bottom: 64px;">
+                <span class="eyebrow coral">SECTOR SPECIFIC</span>
+                <h2 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(48px, 6vw, 88px); letter-spacing: -0.025em; color: #fff; margin: 24px 0;">Consulting.</h2>
+                <div class="charter-rule" style="margin-left: 0;"></div>
             </div>
-            <div class="mandate-inner" style="max-width: 900px; position: relative; z-index: 1;">
-                <p class="about-left p" style="font-size: 19px; text-align: center; color: #fff; font-family: 'Cormorant Garamond', serif; font-style: italic;">
-                    Our mission is the steady effort to find balance. We exist to clear away the noise and replace it with an immeasurable commitment to restoration. We work together to build a future using human time, natural energy, and communal wisdom. Every step we take is about creating a legacy of care, ensuring that our presence on this planet is a kindness to those who follow.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Charter / Governance -->
-    <div class="section-divider">
-        <div class="section reveal" id="charter">
-            <div class="charter-header">
-                <h2 class="prominent-heading gold" style="font-size: 24px;">GOVERNANCE</h2>
-                <h2>The Charter.</h2>
-                <div class="charter-rule"></div>
-                <span class="eyebrow ash">The Governing Principles of Axiom Net Zero</span>
-            </div>
-            <div class="charter-grid">
-                <div class="charter-item">
-                    <h4>Article 01</h4>
-                    <p>Axiom Net Zero is mandated to achieve absolute Carbon Neutrality within its first 365 days of operation. This is a structural condition of our existence.</p>
-                </div>
-                <div class="charter-item">
-                    <h4>Article 02</h4>
-                    <p>Every aggregated resource — solar yield, biosphere data awareness, voluntary work resource assets — is recorded on an immutable public ledger. Honest accounting is how we build trust.</p>
-                </div>
-                <div class="charter-item">
-                    <h4>Article 03</h4>
-                    <p>No choice is made for short-term gain. Every resource deployment is measured against its impact on the world our children will inherit in the years to come.</p>
-                </div>
-                <div class="charter-item">
-                    <h4>Article 04</h4>
-                    <p>Resources move from point of origin to point of need with as little friction as possible. We remove the clutter between nature and families.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Mandate -->
-    <div class="full-bleed section-divider">
-        <div class="section reveal" id="mandate">
-            <div class="mandate-inner">
-                <div class="mandate-line"></div>
-                <h2 class="prominent-heading gold" style="font-size: 24px;">A PLAIN TRUTH</h2>
-                <p class="mandate-quote">
-                    "We all know the feeling of a world out of sync. But the truth is simple: our communities were meant to work for us, not against us. I believe every family deserves clean air and a neighborhood powered by the sun. Axiom Net Zero is the promise to fix the plumbing — to make sure the resources we already have actually reach your front door."
-                </p>
-                <div class="mandate-byline">— Rahul Reddy</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Work -->
-    <div class="section-divider" id="deploy">
-        <div class="section reveal">
-            <div class="deploy-header">
-                <h2 class="prominent-heading coral" style="text-align: left; margin-bottom: 20px; font-size: 32px;">OUR WORK</h2>
-                <h3 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 42px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 15px;">Community Engagement.</h3>
-                <div style="margin-top: 48px; padding-top: 16px;">
-                    <p class="ash">We believe that restoration is a social act. We deploy resources through community-based events designed to promote genuine health and happiness.</p>
-                </div>
-            </div>
-            <div class="deploy-grid">
-                <div class="deploy-cell">
-                    <h4>Energise Reconnect Solterrix</h4>
-                    <p class="ash">Meet-ups where neighbor-owned energy yield is shared and energy-sharing is facilitated via devices, turning technical assets into a communal handshake.</p>
-                </div>
-                <div class="deploy-cell">
-                    <h4>Communal Power Tables</h4>
-                    <p class="ash">A Solterra where communities share electricity over simple food and drink, using neighborhood yields to fuel the shared kitchen and local conversation.</p>
-                </div>
-                <div class="deploy-cell">
-                    <h4>Wellness Immersions</h4>
-                    <p class="ash">Solterrix where voluntary work resource assets are pledged to neighborhood restoration, creating a visible record of communal happiness.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- The Outcome -->
-    <div class="full-bleed section-divider">
-        <div class="section reveal" style="text-align: center;">
-            <div class="mandate-line"></div>
-            <h2 class="prominent-heading gold">THE OUTCOME</h2>
-            <h2 class="about-left" style="font-family: 'Cormorant Garamond', serif; font-size: clamp(32px, 4vw, 48px); margin-bottom: 32px; text-align: center; padding-bottom: 15px; line-height: 1.35;">The Restoration of the Baseline.</h2>
-            <div class="mandate-inner" style="max-width: 700px;">
-                <p class="ash" style="font-size: 17px; line-height: 1.8;">
-                    The greatest thing we offer the world is entirely free: the return of Equilibrium. When the friction of consumption is removed and the connections of our communities are fixed, the result is an immeasurable, unshakeable peace. We give every soul the right to a steady world—communities that work for us, a sky that is clear, and a future that is finally, simply, balanced.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Leadership / Board -->
-    <div class="section-divider" id="directors">
-        <div class="section reveal" style="text-align: center;">
-            <h2 class="coral" style="display: block; text-align: center; margin-bottom: 40px; font-size: 20px; letter-spacing: 0.2em; font-weight: 700; text-transform: uppercase;">Caretakers of Progress</h2>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 42px); font-style: italic; color: #fff; margin-bottom: 48px; font-weight: 300; line-height: 1.4; padding-bottom: 15px;">
-                Join the <strong>DEI-compliant</strong> Board of Directors that <strong>will</strong> make a difference.
-            </h2>
-            <div class="mandate-inner" style="max-width: 800px;">
-                <p class="ash" style="font-size: 17px; line-height: 1.8;">
-                    We are building a governing body that reflects the communities we serve. We seek leaders who possess the soft lovingness to care for our neighbors, the conviction to uphold our mandate, and the resolve to ensure that absolute equity is the baseline of our every decision.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Whitepaper -->
-    <div class="full-bleed section-divider" id="whitepaper">
-        <div class="section reveal whitepaper-section">
-            <h2 class="whitepaper-title">Whitepaper</h2>
-            <h2 style="font-family: 'Cormorant Garamond', serif; font-size: clamp(20px, 3vw, 32px); font-style: italic; color: #fff; margin-bottom: 16px; padding-bottom: 10px; line-height: 1.3;">
-                Reach Out Directly via Instagram
-            </h2>
-            <p class="ash" style="font-size: 11px; font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.6;">
-                Check Back for Link Soon
-            </p>
-        </div>
-    </div>
-
-    <!-- Presence / Contact Portal -->
-    <div class="section-divider" id="reach-out">
-        <div class="section reveal presence-wrap">
-            <span class="eyebrow coral" style="display: block; margin-bottom: 48px; font-weight: 800; letter-spacing: 0.4em;">Presence</span>
             
-            <select id="departmentSelect" class="portal-select">
-                <option value="" disabled selected>Select Department</option>
-                <option value="health">Universal Healthcare</option>
-                <option value="food">Sustainable Food Yield</option>
-                <option value="water">Direct Water Restoration</option>
-                <option value="energy">Community Solar Energy</option>
-                <option value="directors">Board of Directors Inquiry</option>
-                <option value="general">General Inquiries</option>
-            </select>
+            <div class="vision-row">
+                <div class="vision-col">
+                    <span class="eyebrow coral">The Vision</span>
+                    <h3>A Steady World.</h3>
+                    <p class="ash">We envision a world where clean air and shared energy are not privileges determined by postcode. We see a future where environmental health is as steady as the sunrise.</p>
+                </div>
+                <div class="vision-col">
+                    <span class="eyebrow gold">The Strategy</span>
+                    <h3>Aggregation.</h3>
+                    <p class="ash">We link what already exists. The output of the sun, the health of our local land, and the time we spend taking care of it. Combined, these become a force for restoration.</p>
+                </div>
+                <div class="vision-col">
+                    <span class="eyebrow coral">The Mission</span>
+                    <h3>To Restore.</h3>
+                    <p class="ash">Our mission is to fix the leaks in our world. We ensure that every unit of community energy is protected, accounted for, and shared fairly with those who need it most.</p>
+                </div>
+            </div>
 
-            <button onclick="handleInitiate()" class="btn-initiate-active">Initiate</button>
-            
-            <p class="launch-subtext">Check Back Soon for our Launch Date</p>
+            <!-- HOVER / CLICK POPUP BUTTON -->
+            <div class="popup-container" onclick="this.classList.toggle('active')">
+                <button class="btn-primary" style="margin-bottom: 0;">SECTOR SPECIFIC CONSULTING</button>
+                
+                <div class="popup-window">
+                    <div class="popup-section">
+                        <h4>Digital Health Transformation</h4>
+                        <p>Healthcare isn't healthy. We are evolving outdated systems and building responsive data platforms that work in vivo. We focus on integrating new technologies such as automated patient tracking to cut waste and lower carbon output. We assure leaner operations and better outcomes for patients. Stripping away inefficiency and pushing medical tech to the bleeding edge is our focus. Infrastructure redesign requires the intent for deep architectural analysis.</p>
+                    </div>
+                    <div class="popup-section">
+                        <h4>Financial Technology</h4>
+                        <p>The old money systems are dead. We integrate decentralise finance and force capital to work harder and smarter. By leveraging blockchain and artificial intelligence we strip out the friction and redirect flow towards sustainable assets. We optimise your tech stack to track every cent and its carbon impact. You get total transparency and relentless efficiency. We are rewiring the financial grid via 'green finance' to lower the cost of the baseline for every meaningful transaction. No excuses.</p>
+                    </div>
+                    <div class="popup-section">
+                        <h4>Supply Chain and Logistics</h4>
+                        <p>Moving things around the planet is destroying it. We understand your networks to ensure they're bulletproof and clean. We enable data driven tracking at every bottleneck node to expose inefficiencies and crush unnecessary emissions. We build resilient pathways that can take a hit and keep delivering. A supply-chain that is lean and entirely accountable is the aim of the scientifically driven, algorithmically driven founders and companies. We turn heavy-elephant-like carbon footprints into lightweight agile eagle-sharp operations.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="deploy-grid" style="margin-top: 100px;">
+                <div class="deploy-cell">
+                    <span class="deploy-num">NODE 01</span>
+                    <h4>Community Solar</h4>
+                    <p class="ash">Aggregating excess solar yield from local residential clusters and distributing it to community infrastructure and low access households.</p>
+                </div>
+                <div class="deploy-cell">
+                    <span class="deploy-num">NODE 02</span>
+                    <h4>Biosphere Data Awareness</h4>
+                    <p class="ash">Monitoring local biodiversity and air quality in real time. Using that data to direct community led restoration projects where they are needed most.</p>
+                </div>
+                <div class="deploy-cell">
+                    <span class="deploy-num">NODE 03</span>
+                    <h4>Collective Time</h4>
+                    <p class="ash">Aggregating the hours our community spends on restoration and protection. Human output is the most vital resource in our shared ledger.</p>
+                </div>
+            </div>
         </div>
     </div>
 
     <footer>
         <div class="footer-inner">
-            <div class="footer-wordmark">
-                <svg width="24" height="18" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M10 30C10 30 35 10 50 30C65 50 90 30 90 30" stroke="#C5A059" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M50 30L55 15C55 15 58 10 50 5C42 10 45 15 45 15L50 30Z" fill="#C5A059"/>
-                </svg>
-                Axiom<span>Net Zero.</span>
-            </div>
+            <div class="footer-wordmark">Axiom<span>NetZero.</span></div>
             <div class="footer-links">
-                <a href="#about">About</a>
-                <a href="#charter">Charter</a>
-                <a href="#pillars">Resolution</a>
-                <a href="#vision">Mission</a>
-                <a href="#deploy">Work</a>
-                <a href="#whitepaper">Whitepaper</a>
-                <a href="#reach-out">Connect</a>
+                <a onclick="showView('home', '#about')">About</a>
+                <a onclick="showView('home', '#charter')">Charter</a>
+                <a onclick="showView('home', '#vision')">Mission</a>
+                <a onclick="showView('sectors')">Sectors</a>
+                <a onclick="showView('home', '#contact')">Contact</a>
             </div>
             <div class="footer-base">
                 <span>Axiom Net Zero Limited &copy; 2026</span>
+                <span>Decentralised Not For Profit</span>
                 <span>Restoring Our Shared Balance</span>
             </div>
         </div>
     </footer>
 
     <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
         const io = new IntersectionObserver(entries => {
             entries.forEach(e => {
                 if (e.isIntersecting) {
@@ -655,47 +645,37 @@
                     io.unobserve(e.target);
                 }
             });
-        }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        }, observerOptions);
+
+        function initAnimations() {
+            document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+        }
+
+        function showView(viewId, anchor = null) {
+            document.querySelectorAll('.view-content').forEach(v => v.classList.remove('active'));
+            const target = document.getElementById('view-' + viewId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo(0, 0);
+                initAnimations();
+                if (anchor) {
+                    setTimeout(() => {
+                        const el = document.querySelector(anchor);
+                        if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                }
+            }
+        }
 
         function handleInitiate() {
             const department = document.getElementById('departmentSelect').value;
-            let email = "";
-            let subject = "";
-
-            switch(department) {
-                case "health":
-                    email = "health@axiomnetzero.org";
-                    subject = "Inquiry: Universal Healthcare Pillar";
-                    break;
-                case "food":
-                    email = "food@axiomnetzero.org";
-                    subject = "Inquiry: Sustainable Food Yield Pillar";
-                    break;
-                case "water":
-                    email = "water@axiomnetzero.org";
-                    subject = "Inquiry: Direct Water Restoration Pillar";
-                    break;
-                case "energy":
-                    email = "energy@axiomnetzero.org";
-                    subject = "Inquiry: Community Solar Energy Pillar";
-                    break;
-                case "directors":
-                    email = "resolve@axiomnetzero.org";
-                    subject = "Inquiry: Board of Directors";
-                    break;
-                case "general":
-                    email = "resolve@axiomnetzero.org";
-                    subject = "General Inquiry";
-                    break;
-                default:
-                    email = "resolve@axiomnetzero.org";
-                    subject = "Initiate Communication";
-            }
-
-            const body = "I am reaching out to discuss the restoration of our shared balance.";
-            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            if (!department) return;
+            const email = department === 'directors' || department === 'general' ? "resolve@axiomnetzero.org" : department + "@axiomnetzero.org";
+            const subject = "Inquiry: " + department.charAt(0).toUpperCase() + department.slice(1);
+            window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=I am reaching out to discuss the restoration of our shared balance.`;
         }
+
+        window.onload = initAnimations;
     </script>
 </body>
 </html>
