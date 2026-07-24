@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axiom Books | An Imprint of Axiom Net Zero</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F5F1E8;
+            --paper: #FBF8F2;
+            --navy: #10151F;
+            --dusk: #5B6472;
+            --gold: #C5A059;
+            --amber: #B8703F;
+            --rule: rgba(16,21,31,0.1);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--cream);
+            color: var(--navy);
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .eyebrow {
+            font-size: 10px;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--amber);
+        }
+
+        nav {
+            border-bottom: 1px solid var(--rule);
+            background: var(--cream);
+        }
+        .nav-inner {
+            max-width: 1200px; margin: 0 auto;
+            padding: 0 48px; height: 88px;
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .wordmark {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 400; font-style: italic; font-size: 24px;
+            letter-spacing: -0.01em; color: var(--navy);
+            text-decoration: none;
+        }
+        .wordmark span { color: var(--amber); font-style: normal; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; vertical-align: middle; margin-left: 10px; }
+        .nav-links { display: flex; align-items: center; gap: 40px; }
+        .nav-links a {
+            font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700;
+            color: var(--dusk); text-decoration: none; transition: color 0.25s;
+        }
+        .nav-links a:hover { color: var(--navy); }
+        .nav-back {
+            border: 1px solid var(--rule); padding: 10px 20px;
+            color: var(--navy) !important;
+        }
+        .nav-back:hover { border-color: var(--navy); }
+
+        .section { padding: 100px 48px; max-width: 1200px; margin: 0 auto; }
+        .rule-top { border-top: 1px solid var(--rule); }
+
+        .hero {
+            display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 96px; align-items: center;
+            padding: 88px 48px 100px; max-width: 1200px; margin: 0 auto;
+        }
+        .hero-tag {
+            display: inline-block; font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+            font-weight: 700; color: var(--amber); border: 1px solid rgba(184,112,63,0.35);
+            padding: 8px 16px; margin-bottom: 32px;
+        }
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 300;
+            font-size: clamp(56px, 7vw, 96px);
+            letter-spacing: -0.02em;
+            line-height: 0.95;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+        .hero h1 em { color: var(--amber); font-style: italic; }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400;
+            font-size: 22px; color: var(--dusk); margin-bottom: 32px;
+        }
+        .hero-desc { font-size: 16px; line-height: 1.8; color: var(--navy); opacity: 0.8; max-width: 460px; margin-bottom: 40px; }
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+
+        .btn-primary {
+            display: inline-block;
+            background: var(--navy); color: var(--paper);
+            font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+            padding: 18px 36px; text-decoration: none;
+            transition: filter 0.3s, transform 0.3s;
+            cursor: pointer; border: none;
+        }
+        .btn-primary:hover { filter: brightness(1.2); transform: translateY(-1px); }
+        .btn-ghost {
+            display: inline-block;
+            border: 1px solid var(--navy); color: var(--navy);
+            font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+            padding: 18px 36px; text-decoration: none;
+            transition: all 0.3s;
+            cursor: pointer; background: transparent;
+        }
+        .btn-ghost:hover { background: var(--navy); color: var(--paper); }
+        .btn-disabled {
+            display: inline-block;
+            border: 1px dashed var(--rule); color: var(--dusk);
+            font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
+            padding: 18px 36px; cursor: default; background: transparent;
+        }
+
+        .cover-frame {
+            aspect-ratio: 2 / 3; width: 100%; max-width: 380px; margin: 0 auto;
+            border: 1px dashed rgba(16,21,31,0.25);
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            text-align: center; padding: 32px; background: var(--paper);
+            position: relative;
+        }
+        .cover-frame .mark { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--dusk); margin-bottom: 12px; }
+        .cover-frame .label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dusk); opacity: 0.6; }
+        .cover-frame .corner { position: absolute; width: 14px; height: 14px; border-color: var(--gold); }
+        .cover-frame .corner.tl { top: -1px; left: -1px; border-top: 1px solid; border-left: 1px solid; }
+        .cover-frame .corner.br { bottom: -1px; right: -1px; border-bottom: 1px solid; border-right: 1px solid; }
+
+        .about-book { display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
+        .about-book h2 {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 4vw, 52px);
+            letter-spacing: -0.01em; color: var(--navy); margin: 20px 0 28px;
+        }
+        .about-book p { font-size: 15px; line-height: 1.85; color: var(--navy); opacity: 0.82; margin-bottom: 20px; }
+        .pull-quote {
+            font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400;
+            font-size: 24px; line-height: 1.5; color: var(--navy);
+            border-left: 2px solid var(--gold); padding-left: 28px;
+        }
+
+        .details-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--rule); margin-top: 72px; }
+        .detail-cell { background: var(--paper); padding: 28px 24px; }
+        .detail-label { font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dusk); margin-bottom: 10px; }
+        .detail-value { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--navy); }
+
+        .catalogue-header { text-align: left; margin-bottom: 56px; }
+        .catalogue-header h2 {
+            font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: clamp(36px, 4.5vw, 56px);
+            letter-spacing: -0.01em; color: var(--navy); margin: 16px 0;
+        }
+        .catalogue-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--rule); }
+        .cat-card { background: var(--paper); padding: 40px; display: flex; flex-direction: column; gap: 16px; }
+        .cat-card .cat-cover {
+            width: 88px; height: 132px; border: 1px dashed var(--rule); flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 10px; color: var(--dusk); text-align: center; padding: 8px;
+        }
+        .cat-row { display: flex; gap: 24px; }
+        .cat-card h4 { font-family: 'Cormorant Garamond', serif; font-weight: 500; font-size: 24px; color: var(--navy); margin-bottom: 8px; }
+        .cat-card .cat-status { font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700; color: var(--amber); margin-bottom: 10px; display: block; }
+        .cat-card p { font-size: 14px; line-height: 1.7; color: var(--navy); opacity: 0.75; }
+
+        footer { border-top: 1px solid var(--rule); padding: 88px 48px 56px; }
+        .footer-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .footer-wordmark { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: clamp(44px, 6vw, 72px); letter-spacing: -0.01em; color: var(--navy); margin-bottom: 40px; }
+        .footer-wordmark span { color: var(--amber); font-style: normal; }
+        .footer-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 32px; margin-bottom: 40px; }
+        .footer-links a { font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; font-weight: 700; color: var(--dusk); text-decoration: none; }
+        .footer-links a:hover { color: var(--navy); }
+        .footer-base { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--dusk); opacity: 0.7; }
+
+        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.9s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        @media (max-width: 960px) {
+            .nav-links a:not(.nav-back) { display: none; }
+            .hero { grid-template-columns: 1fr; gap: 56px; padding-top: 64px; }
+            .hero-actions { flex-direction: column; }
+            .about-book { grid-template-columns: 1fr; gap: 48px; }
+            .details-grid { grid-template-columns: 1fr 1fr; }
+            .catalogue-grid { grid-template-columns: 1fr; }
+            .cat-row { flex-direction: column; }
+        }
+        @media (max-width: 640px) {
+            .section, .hero, .nav-inner, footer { padding-left: 24px; padding-right: 24px; }
+            .details-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="#" class="wordmark">Axiom<span>Books</span></a>
+            <div class="nav-links">
+                <a href="#catalogue">Catalogue</a>
+                <a href="#about">The Imprint</a>
+                <a href="https://www.axiomnetzero.org" class="nav-back">Axiom Net Zero ↗</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <span class="hero-tag">Axiom Books — First Edition</span>
+            <h1>Remain.</h1>
+            <p class="hero-subtitle">A Story of Tectonic Time</p>
+            <p class="hero-desc">A work of creative non-fiction charting civilisational endurance across deep time — where historical argument meets poetic metaphor, and the long memory of empire is measured against the patience of stone.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn-primary">Buy on Kindle (KDP)</a>
+                <a href="#" class="btn-ghost">Direct Purchase</a>
+            </div>
+        </div>
+        <div>
+            <div class="cover-frame">
+                <div class="corner tl"></div>
+                <div class="corner br"></div>
+                <p class="mark">Remain</p>
+                <p class="label">Cover Art — Placeholder</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule-top">
+        <div class="section reveal" id="about">
+            <div class="about-book">
+                <div>
+                    <span class="eyebrow">About the Book</span>
+                    <h2>Endurance, measured in tectonic time.</h2>
+                    <p><em style="font-family: 'Cormorant Garamond', serif;">Remain</em> asks what it means for a civilisation, a people, or an idea to last — not across a single lifetime, but across the kind of time geology deals in. It moves between historical argument and poetic metaphor, treating deep time and imperial legacy as two ways of asking the same question: what actually remains?</p>
+                    <p>The book closes on a quote page from Ali Shariati, closing the argument on a note of moral clarity rather than resolution.</p>
+                </div>
+                <div>
+                    <p class="pull-quote">"What remains is not what was built to last. It is what could not be removed."</p>
+                </div>
+            </div>
+            <div class="details-grid">
+                <div class="detail-cell"><div class="detail-label">Format</div><div class="detail-value">Paperback / Kindle</div></div>
+                <div class="detail-cell"><div class="detail-label">Genre</div><div class="detail-value">Creative Non-Fiction</div></div>
+                <div class="detail-cell"><div class="detail-label">Imprint</div><div class="detail-value">Axiom Books</div></div>
+                <div class="detail-cell"><div class="detail-label">Release</div><div class="detail-value">Coming Soon</div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="rule-top" style="background: var(--paper);">
+        <div class="section reveal" id="catalogue">
+            <div class="catalogue-header">
+                <span class="eyebrow">The List</span>
+                <h2>Catalogue.</h2>
+            </div>
+            <div class="catalogue-grid">
+                <div class="cat-card">
+                    <div class="cat-row">
+                        <div class="cat-cover">Remain</div>
+                        <div>
+                            <span class="cat-status">Coming Soon</span>
+                            <h4>Remain.</h4>
+                            <p>A Story of Tectonic Time — creative non-fiction on civilisational endurance and deep time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <div class="cat-row">
+                        <div class="cat-cover">Healthcare 4.0</div>
+                        <div>
+                            <span class="cat-status">Coming to this Imprint</span>
+                            <h4>Healthcare 4.0</h4>
+                            <p>No release date has been set. Details to follow as the manuscript develops.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-wordmark">Axiom<span>Books.</span></div>
+            <div class="footer-links">
+                <a href="#catalogue">Catalogue</a>
+                <a href="#about">The Imprint</a>
+                <a href="https://www.axiomnetzero.org">Axiom Net Zero</a>
+            </div>
+            <div class="footer-base">An Imprint of Axiom Net Zero &middot; &copy; 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+</html>

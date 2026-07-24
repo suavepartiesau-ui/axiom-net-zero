@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Axiom Net Zero</title>
+    <meta name="description" content="Reach the right department at Axiom Net Zero — healthcare, food, water, energy, board inquiries, or general contact.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Syne:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav>
+        <div class="nav-inner">
+            <a href="index.html" class="wordmark">Axiom<span>NetZero</span></a>
+            <div class="nav-links">
+                <a href="about.html">About</a>
+                <a href="charter.html">Charter</a>
+                <a href="mission.html">Mission</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="ledger.html">Ledger</a>
+                <a href="contact.html" class="current">Contact</a>
+            </div>
+            <a href="contact.html" class="nav-cta">Initiate</a>
+        </div>
+    </nav>
+
+    <div class="page-enter">
+        <div class="page-header">
+            <span class="eyebrow ash">Connect</span>
+            <h1>Initiate.</h1>
+            <div class="rule"></div>
+            <p>Select the department closest to what you're reaching out about. We'll route your message directly — no ticketing system standing between you and the person who reads it.</p>
+        </div>
+
+        <div class="section reveal">
+            <div style="text-align: center; max-width: 600px; margin: 0 auto 100px;">
+                <select id="departmentSelect" class="portal-select">
+                    <option value="" disabled selected>Select Department</option>
+                    <option value="health">Universal Healthcare</option>
+                    <option value="food">Sustainable Food Yield</option>
+                    <option value="water">Direct Water Restoration</option>
+                    <option value="energy">Community Solar Energy</option>
+                    <option value="directors">Board of Directors Inquiry</option>
+                    <option value="general">General Inquiries</option>
+                </select>
+                <button onclick="handleInitiate()" class="btn-primary" style="padding: 24px 80px; font-weight: 800; letter-spacing: 0.3em;">Initiate</button>
+                <p style="margin-top: 32px; font-size: 12px; color: var(--ash); font-family: 'Cormorant Garamond', serif; font-style: italic; opacity: 0.7;">Check Back Soon for our Launch Date</p>
+            </div>
+
+            <div style="margin-bottom: 100px;">
+                <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-style: italic; font-size: 32px; color: #fff; margin-bottom: 40px; text-align: center;">Before you write in.</h3>
+                <div class="charter-grid">
+                    <div class="charter-item"><h4>What happens after I initiate?</h4><p>Your message opens directly in your own email client, addressed to the relevant department. Nothing is sent automatically or stored on a server we control.</p></div>
+                    <div class="charter-item"><h4>How long until I hear back?</h4><p>We're a small, decentralised team, so response times vary by department. Board and media inquiries are prioritised; general questions may take longer.</p></div>
+                    <div class="charter-item"><h4>Is this a paid service?</h4><p>Community-facing work is not. Sector Specific Consulting is a paid engagement — see the Sectors page for how those conversations start.</p></div>
+                    <div class="charter-item"><h4>I want to start a node in my area.</h4><p>Select General Inquiries and tell us what resource you're working with. Node autonomy means we don't gatekeep who can start one — we just need to know you exist.</p></div>
+                </div>
+            </div>
+
+            <div class="two-col" style="gap: 64px;">
+                <div>
+                    <span class="eyebrow coral">Media &amp; Press</span>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 28px; color: #fff; margin: 20px 0;">Covering our work.</h3>
+                    <p class="ash" style="font-size: 15px; line-height: 1.8;">Journalists and researchers are welcome to select General Inquiries. We'd rather a claim about us be checked against the ledger than repeated from a press release.</p>
+                </div>
+                <div>
+                    <span class="eyebrow coral">Partnerships</span>
+                    <h3 style="font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 28px; color: #fff; margin: 20px 0;">Working alongside us.</h3>
+                    <p class="ash" style="font-size: 15px; line-height: 1.8;">Organisations with an existing resource — solar infrastructure, sensor networks, volunteer capacity — should reach out via the relevant department directly.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-wordmark">Axiom<span>NetZero.</span></div>
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="charter.html">Charter</a>
+                <a href="mission.html">Mission</a>
+                <a href="sectors.html">Sectors</a>
+                <a href="ledger.html">Ledger</a>
+                <a href="contact.html">Contact</a>
+                <a href="https://books.axiomnetzero.org" style="color: var(--gold);">Books</a>
+            </div>
+            <div class="footer-base"><span>Axiom Net Zero Limited &copy; 2026</span><span>Decentralised Not For Profit</span><span>Restoring Our Shared Balance</span></div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
